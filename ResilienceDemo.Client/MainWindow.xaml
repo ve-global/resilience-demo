@@ -1,0 +1,122 @@
+﻿<Window x:Class="ResilienceDemo.Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ResilienceDemo.Client"
+        mc:Ignorable="d"
+        Title="Ve Spammer" Height="350" Width="525">
+    <Window.Resources>
+
+        <Style TargetType="Label">
+            <Setter Property="Margin" Value="3"/>
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="3"/>
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="3"/>
+        </Style>
+
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Url -->
+        <Label Content="Server Mode:" 
+               Grid.Row="0"
+               HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <ComboBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding ServiceOptions}" SelectedItem="{Binding SelectedServiceOption}" DisplayMemberPath="Name" Margin="3" Grid.ColumnSpan="2"/>
+
+        <!-- Calls per second -->
+        <Label Content="Calls Per Second:" 
+               Grid.Row="1"
+               HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Margin="3"
+                 Text="{Binding CallsPerSecond}"/>
+
+        <!-- Duration -->
+        <Label Content="Total Seconds:" 
+               Grid.Row="2"
+               HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Margin="3"
+                 Text="{Binding SecondsDuration}"/>
+
+        <!-- Headers -->
+        <Label Content="Client" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" FontWeight="Bold" FontSize="16"/>
+        <Label Content="Server A" Grid.Row="3" Grid.Column="2"  HorizontalAlignment="Center" FontWeight="Bold" FontSize="16"/>
+        <Label Content="Server B" Grid.Row="3" Grid.Column="4"  HorizontalAlignment="Center" FontWeight="Bold" FontSize="16"/>
+
+        <!-- Machine Images -->
+        <Path Grid.Row="4" Grid.Column="0" Grid.RowSpan="3" Data="M0,22.496973L32,22.496973 32,25.868 0,25.868z M9.3140149,18.981964L22.685999,18.981964 22.685999,21.134976 9.3140149,21.134976z M2.222001,1.9290133L2.222001,17.222994 29.778014,17.222994 29.778014,1.9290133z M0.20899963,0L31.790009,0 31.790009,18.832978 0.20899963,18.832978z" Stretch="Uniform" Fill="#FF0D0D0D" Width="68" Height="68" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5"/>
+        <Path Grid.Row="4" Grid.Column="2" Grid.RowSpan="3" Data="M25.979007,22.719C26.669008,22.719 27.229007,23.279002 27.229007,23.969 27.229007,24.659001 26.669008,25.219 25.979007,25.219 25.289009,25.219 24.729007,24.659001 24.729007,23.969 24.729007,23.279002 25.289009,22.719 25.979007,22.719z M1.9999999,21.999999L1.9999999,25.999999 29.999999,25.999999 29.999999,21.999999z M0,19.999999L31.999999,19.999999 31.999999,27.999999 0,27.999999z M25.917007,12.666995C26.607007,12.666995 27.167007,13.226994 27.167007,13.916995 27.167007,14.606994 26.607007,15.166995 25.917007,15.166995 25.227008,15.166995 24.667007,14.606994 24.667007,13.916995 24.667007,13.226994 25.227008,12.666995 25.917007,12.666995z M1.9999999,11.999999L1.9999999,15.999999 29.999999,15.999999 29.999999,11.999999z M0,9.9999985L31.999999,9.9999985 31.999999,17.999999 0,17.999999z M25.83402,2.5830075C26.524021,2.5830073 27.08402,3.1430073 27.08402,3.8330073 27.08402,4.5230074 26.524021,5.0830073 25.83402,5.0830073 25.144021,5.0830073 24.58402,4.5230074 24.58402,3.8330073 24.58402,3.1430073 25.144021,2.5830073 25.83402,2.5830075z M2.0000071,2L2.0000071,6.0000004 30.000007,6.0000004 30.000007,2z M7.152559E-06,0L32.000007,0 32.000007,8.0000004 7.152559E-06,8.0000004z" Stretch="Uniform" Fill="#FF0D0D0D" Width="68" Height="68" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5"/>
+        <Path Grid.Row="4" Grid.Column="4" Grid.RowSpan="3" Data="M25.979007,22.719C26.669008,22.719 27.229007,23.279002 27.229007,23.969 27.229007,24.659001 26.669008,25.219 25.979007,25.219 25.289009,25.219 24.729007,24.659001 24.729007,23.969 24.729007,23.279002 25.289009,22.719 25.979007,22.719z M1.9999999,21.999999L1.9999999,25.999999 29.999999,25.999999 29.999999,21.999999z M0,19.999999L31.999999,19.999999 31.999999,27.999999 0,27.999999z M25.917007,12.666995C26.607007,12.666995 27.167007,13.226994 27.167007,13.916995 27.167007,14.606994 26.607007,15.166995 25.917007,15.166995 25.227008,15.166995 24.667007,14.606994 24.667007,13.916995 24.667007,13.226994 25.227008,12.666995 25.917007,12.666995z M1.9999999,11.999999L1.9999999,15.999999 29.999999,15.999999 29.999999,11.999999z M0,9.9999985L31.999999,9.9999985 31.999999,17.999999 0,17.999999z M25.83402,2.5830075C26.524021,2.5830073 27.08402,3.1430073 27.08402,3.8330073 27.08402,4.5230074 26.524021,5.0830073 25.83402,5.0830073 25.144021,5.0830073 24.58402,4.5230074 24.58402,3.8330073 24.58402,3.1430073 25.144021,2.5830073 25.83402,2.5830075z M2.0000071,2L2.0000071,6.0000004 30.000007,6.0000004 30.000007,2z M7.152559E-06,0L32.000007,0 32.000007,8.0000004 7.152559E-06,8.0000004z" Stretch="Uniform" Fill="#FF0D0D0D" Width="68" Height="68" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5"/>
+
+        <!-- Client Requests Made -->
+        <Label Content="Total:" 
+               Grid.Row="7"
+               HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="7" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="40" Text="{Binding ClientRequestsMade}" IsReadOnly="True"/>
+
+        <!-- Client Requests Completed -->
+        <Grid Grid.Row="4" Grid.Column="1">
+            <Path Data="M0,25 100,25 100,0 125,50 100,100 100,75 0,75z" Stretch="Uniform" Fill="#FF0C7427" Height="50"/>
+            <TextBox Grid.Row="5" Grid.Column="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="40" Text="{Binding ClientRequestsCompleted}" Background="#7FFFFFFF" IsReadOnly="True"/>
+        </Grid>
+
+        <!-- Client Requests Failed -->
+        <Grid Grid.Row="6" Grid.Column="1" >
+            <Path Data="M0,25 100,25 100,0 125,50 100,100 100,75 0,75z" Stretch="Uniform" Fill="#FFBD1111" Height="50"/>
+            <TextBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="40" Text="{Binding ClientRequestsFailed}" Background="#7FFFFFFF" IsReadOnly="True"/>
+        </Grid>
+
+        <!-- Server Requests Made -->
+        <Label Content="Total:" 
+               Grid.Row="7" Grid.Column="2"
+               HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="7" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="40" Text="{Binding ServerRequestsMade}" IsReadOnly="True"/>
+
+        <!-- Server Requests Completed -->
+        <Grid Grid.Row="4" Grid.Column="3">
+            <Path Data="M0,25 100,25 100,0 125,50 100,100 100,75 0,75z" Stretch="Uniform" Fill="#FF0C7427" Height="50"/>
+            <TextBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="40" Text="{Binding ServerRequestsCompleted}" Background="#7FFFFFFF" IsReadOnly="True"/>
+        </Grid>
+
+        <!-- Server Requests Failed -->
+        <Grid Grid.Row="6" Grid.Column="3">
+            <Path Data="M0,25 100,25 100,0 125,50 100,100 100,75 0,75z" Stretch="Uniform" Fill="#FFBD1111" Height="50"/>
+            <TextBox HorizontalAlignment="Center" VerticalAlignment="Center" Width="40" Text="{Binding ServerRequestsFailed}" Background="#7FFFFFFF" IsReadOnly="True"/>
+        </Grid>
+
+        <!-- Server Requests Retried -->
+        <StackPanel Grid.Row="5" Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Left">
+            <Path Data="M1.6819987,14.044979L9.8970004,17.370966 6.3769976,19.284967C8.2400037,22.789972 11.896001,25.193962 16.141995,25.193962 20.631998,25.193962 24.487993,22.521967 26.233004,18.687982L29.466995,18.687982C27.558001,24.216972 22.313997,28.208 16.141995,28.208 10.761998,28.208 6.0890032,25.17498 3.7130042,20.731012L0,22.747003z M16.141995,0C21.460993,1.3985937E-07,26.084002,2.9670097,28.485001,7.3259868L32,5.3049912 30.530991,14.044979 22.236994,10.916013 25.860003,8.8339815C23.983004,5.3789963 20.351999,3.0140068 16.141995,3.0140066 11.653997,3.0140068 7.7980023,5.6860031 6.0520006,9.518979L2.8189999,9.518979C4.7280031,3.9899892,9.9719973,1.3985937E-07,16.141995,0z" Stretch="Uniform" Fill="#FFFC780E" Width="26" Height="26" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left"/>
+            <TextBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="40" Text="{Binding ServerRequestsRetried}" Background="#7FFFFFFF" IsReadOnly="True"/>
+        </StackPanel>
+
+        <!-- Button -->
+        <Button Content="SPAM!" Grid.Row="9" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center" Width="80" Command="{Binding SpamCommand}"/>
+
+    </Grid>
+</Window>
